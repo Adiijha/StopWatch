@@ -2,6 +2,7 @@
 
 body{
     background-color:#100C08;
+    
 }
 
 .stopwatch{
@@ -20,6 +21,7 @@ body{
     border-radius: 40px;
     background-color: black;
     padding: 15px 60px 25px 60px;
+    position: relative;
 }
 
 button{
@@ -37,14 +39,16 @@ button:hover{
     background-color:#36454F;
 }
 
+
 .red-dot{
     width: 15px;
   height: 15px; 
   background-color: #ff0000; 
   border-radius: 50%; 
   position: absolute;
-  top: 33%;
-  left: 64%;
+  top: 10%;
+ left: 90%;
+  
 }
 
 .hidden {
@@ -55,6 +59,46 @@ button:hover{
     font-size: 2.5rem;
     color: white;
     position: absolute;
-    bottom: 46%;
-    right: 35%;
+    bottom: 5%;
+    right: 5%;
 }
+
+.saved-times{
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    position: absolute;
+    top:0;
+    right: 0;
+    margin-right: 150px;
+    margin-top:130px;
+    
+
+}
+
+@media screen and (max-width: 768px) {
+    .stopwatch {
+        margin-top: 10%;
+        flex-direction: column; 
+        align-items: center;
+    }
+    .display {
+        font-size: 5rem;
+    }
+    .milisec {
+        font-size: 1.5rem;
+    }
+    .saved-times {
+        font-size: 1rem;
+        position: static; 
+        margin: 20px 0 0 0; 
+        align-self: center;
+        
+
+    }
+    button {
+        font-size: 1rem;
+        padding: 10px 20px 10px 20px;
+    }
+}
+ 

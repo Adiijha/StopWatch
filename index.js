@@ -1,9 +1,10 @@
-
+document.addEventListener('DOMContentLoaded', function() {
     var ms = document.getElementById("milisec");
     var sec = document.getElementById("seconds");
     var min = document.getElementById("minutes");
     var hr = document.getElementById("hours");
     var redDot = document.getElementById("red-dot");
+    var savedTimes = document.getElementById("saved-times");
 
 
 
@@ -60,6 +61,9 @@
     stop1.addEventListener("click", ()=>{
             clearInterval(interval);
             interval = null;
+            saveCurrentTime();
+            console.log(saveCurrentTime);
+            
             
     });
 
@@ -78,6 +82,15 @@
             min.innerHTML = "00";
             sec.innerHTML = "00";
             redDot.classList.remove('hidden');
+            savedTimes.innerHTML = "Saved Times";
             
     });
 
+    function saveCurrentTime() {
+        const currentTime = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+        const savedTimeItem = document.createElement('div');
+        savedTimeItem.textContent = currentTime;
+        savedTimes.appendChild(savedTimeItem);
+    };
+
+});
