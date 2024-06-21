@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var start = document.getElementById("start");
     var stop1 = document.getElementById("stop");
     var reset = document.getElementById("reset");
+    var save = document.getElementById("save");
 
     var interval;
     var seconds = 0;
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     stop1.addEventListener("click", ()=>{
             clearInterval(interval);
             interval = null;
-            saveCurrentTime();
             console.log(saveCurrentTime);
             
             
@@ -82,13 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
             min.innerHTML = "00";
             sec.innerHTML = "00";
             redDot.classList.remove('hidden');
-            savedTimes.innerHTML = "Saved Times";
+            savedTimes.innerHTML = "Saved Time";
             
+    });
+
+    save.addEventListener("click", ()=>{
+        saveCurrentTime();
     });
 
     function saveCurrentTime() {
         const currentTime = `${hours}:${minutes}:${seconds}.${milliseconds}`;
         const savedTimeItem = document.createElement('div');
+        savedTimeItem.classList.add('saved-times-text');
         savedTimeItem.textContent = currentTime;
         savedTimes.appendChild(savedTimeItem);
     };

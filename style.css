@@ -65,7 +65,7 @@ button:hover{
 
 .saved-times{
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: 'Josefin Sans', sans-serif;
     position: absolute;
     top:0;
@@ -73,6 +73,11 @@ button:hover{
     margin-right: 150px;
     margin-top:130px;
     
+
+}
+.saved-times-text{
+    font-size: 1.5rem;
+
 
 }
 
@@ -83,22 +88,35 @@ button:hover{
         align-items: center;
     }
     .display {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .milisec {
         font-size: 1.5rem;
     }
     .saved-times {
-        font-size: 1rem;
+        font-size: 1.3rem;
         position: static; 
         margin: 20px 0 0 0; 
         align-self: center;
-        
-
+    }
+    .saved-times-text{
+        font-size: 0.8rem;
     }
     button {
         font-size: 1rem;
-        padding: 10px 20px 10px 20px;
+        padding: 10px 10px 10px 10px;
+
+    }
+}
+@media screen and (max-width:1200px) and (min-width:768px) {
+    .saved-times {
+        font-size: 1.7rem;
+        position: static; 
+        margin: 20px 0 0 0; 
+        align-self: center;
+    }
+    .saved-times-text{
+        font-size: 1.2rem;
     }
 }
  
